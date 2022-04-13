@@ -27,11 +27,7 @@ package:
 functions:
   main:
     handler: src/main.handler
-    events:
-      - http:
-          method: any
-          path: /{proxy+}
-          cors: true
+
 
 custom:
   stages:
