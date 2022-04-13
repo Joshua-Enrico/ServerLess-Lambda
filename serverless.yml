@@ -7,8 +7,10 @@ plugins:
   - serverless-stage-manager
 provider:
   name: aws
-  tracing:
-    apiGateway: false
+  apiGateway:
+    restApiId: 0ehm5uf0oi
+    restApiRootResourceId: olcosym43f
+
   runtime: nodejs12.x
   stage: ${opt:stage, 'dev'}
   region: us-east-2
@@ -27,7 +29,11 @@ package:
 functions:
   main:
     handler: src/main.handler
-
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
 
 custom:
   stages:
