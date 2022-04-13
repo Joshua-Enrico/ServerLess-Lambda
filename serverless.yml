@@ -1,4 +1,4 @@
-service: myFirstServerless
+service: NestServerlessFunction
 
 plugins:
   - serverless-plugin-typescript
